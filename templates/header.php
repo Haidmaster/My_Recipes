@@ -1,5 +1,9 @@
 <?php
-require_once('lib/config.php')
+require_once('lib/config.php');
+
+$currentPage = basename($_SERVER['SCRIPT_NAME']);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +32,7 @@ require_once('lib/config.php')
                 <?php foreach ($mainMenu as $key => $value) { ?>
                     <li class="nav-item">
                         <a href="<?= $key; ?>" class="nav-link
-                             <?php if ($current_page === $key) {
+                             <?php if ($currentPage === $key) {
                                     echo 'active';
                                 } ?>"><?= $value; ?>
                         </a>

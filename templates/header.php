@@ -1,9 +1,9 @@
 <?php
 require_once('lib/config.php');
+require_once('lib/pdo.php');
+require_once('lib/session.php');
 
 $currentPage = basename($_SERVER['SCRIPT_NAME']);
-
-
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +25,7 @@ $currentPage = basename($_SERVER['SCRIPT_NAME']);
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 mb-4">
             <a href="index.php" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                <img src="assets/images/my-recipes-logo.png" alt="Logo My Recipes" style="width: 8rem; height: 6rem;">
+                <img src="assets/images/logo-my-recipes.png" alt="Logo My Recipes" style="width: 8rem; height: 6rem;">
             </a>
 
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 nav nav-pills">
@@ -44,7 +44,7 @@ $currentPage = basename($_SERVER['SCRIPT_NAME']);
                 <?php
                 if (!isset($_SESSION['user'])) { ?>
                     <a href="login.php" class="btn btn-outline-primary me-2">Se connecter</a>
-                    <a href="inscription.php" class="btn btn-outline-primary me-2">S'inscrire</a>
+                    <a href="registration.php" class="btn btn-outline-primary me-2">S'inscrire</a>
                 <?php } else { ?>
                     <a href="logout.php" class="btn btn-primary">Se déconnecter</a>
                     <?= ($_SESSION['user']) ?>
